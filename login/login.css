@@ -1,1 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+}
 
+.container .image{
+    width: 55%;
+}
+.container img{
+    width: 100%;
+}
+.login {
+    padding-left: 80px;
+}
+.login .text h1{
+    font-size: 35px;
+    font-weight: 500;
+}
+.login .text p{
+    margin: 10px 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+form input{
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    padding: 10px 0;
+    margin: 10px 0;
+    font-size: 16px;
+    width: 100%;
+}
+form input::placeholder {
+    color: #aaa;
+}
+form input:focus {
+    border-bottom:2px solid #DB4444;
+}
+.input{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.input span{
+    color: red;
+    position: absolute;
+    right: 10px;
+    font-size: 13px;
+}
+.input #password-error{
+    right: 25px;
+}
+.submit{
+    position: relative;
+}
+#submit-error{
+    color: red;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+}
+form .action{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.action button{
+    background-color: #DB4444;
+    color: #fff;
+    border: none;
+    padding: 16px 50px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.action button:hover {
+    background-color: #c03333;
+}
+.action a{
+    text-decoration: none;
+    color: #DB4444;
+}
+/* ===== Responsive ===== */
+@media (max-width: 922px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container .image {
+        width: 100%;
+    }
+
+    .login {
+        padding: 40px 10px;
+    }
+
+    .text h1 {
+        font-size: 26px;
+    }
+}
