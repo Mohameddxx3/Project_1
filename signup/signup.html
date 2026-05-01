@@ -5,10 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
     <link rel="stylesheet" href="signup.css">
+    <!-- header , footer -->
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="header"></div>
     
+    <div class="container">
+        <div class="image">
+            <img src="../login/login.png" alt="photo">
+        </div>
+        <div class="signup">
+            <div class="text">
+                <h1>Create an account</h1>
+                <p>Enter your details below</p>
+            </div>
+            <form>
+                <div class="input">
+                    <input type="text" id="name" placeholder="Name">
+                    <span id="name-error"></span>
+                </div>
+                <div class="input">
+                    <input type="text" id="email" placeholder="Email or Phone Number">
+                    <span id="email-error"></span>
+                </div>
+                <div class="input">
+                    <input type="password" id="password" placeholder="Password">
+                    <span id="password-error"></span>
+                </div>
+                <div class="buttons">
+                    <button>Create Account</button>
+                    <button id="google"><img src="Icon-Google.png"> Sign up with Google</button>
+                </div>
+                <p>Already have account? <a href="../login/login.html">Log in</a></p>
+            </form>
+        </div>
+    </div>
+    
+    <div id="footer"></div>
 
     <script src="signup.js"></script>
+    <!-- header , footer -->
+    <script src="../header/header.js"></script>
+    <script src="../footer/footer.js"></script>
 </body>
 </html>

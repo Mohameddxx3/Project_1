@@ -15,9 +15,11 @@
 }
 .container img{
     width: 100%;
+    height: 700px;
 }
 .login {
     padding-left: 80px;
+    width: 400px;
 }
 .login .text h1{
     font-size: 35px;

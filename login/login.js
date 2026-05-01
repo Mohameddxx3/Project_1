@@ -60,16 +60,14 @@ function validatePassword() {
 email.onkeyup = validateEmail;
 password.onkeyup = validatePassword;
 
-LogIn.onclick = function login(e){
+LogIn.onclick = function (e){
     e.preventDefault();
     if (!validateEmail() || !validatePassword()){
         submitError.textContent = "Incorrect data";
-        return false;
     }
     else{
         localStorage.setItem("isLoggedIn", "true");
         window.location.replace("../index.html");
-        return true;
     }
 }
 
