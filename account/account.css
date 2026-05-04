@@ -193,10 +193,13 @@ nav .fa-bars {
         display: none;
     }
     .account nav .side.open {
-        display: inline-block;
-        background-color: #f5f5f5;
+        display:block;
+        background-color: #f1f1f1;
         padding: 20px;
         border-radius: 10px;
+        position: absolute;
+        z-index: 1;
+        /* width: 100%; */
     }
 
     .account .container {
