@@ -1,0 +1,206 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+/* small  */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium  */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large  */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* top */
+
+.top{
+    padding: 15px 0;
+    font-size: 14px;
+}
+.top .container{
+    display: flex;
+    justify-content: space-between;
+}
+.path a {
+    text-decoration: none;
+    color: #aaa;
+    
+}
+.path .separator {
+    color: #aaa;
+}
+.top .container .welcome span{
+    color: #DB4444;
+    margin-left: 5px;
+}
+
+/* account  */
+
+.account .container{
+    padding-top: 60px ;
+    padding-bottom: 60px ;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+}
+
+/* side  */
+
+nav .side-groub h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+nav .side-groub ul{
+    list-style: none;
+    margin: 15px 0 15px 40px;
+}
+nav .side-groub ul li{
+    margin: 10px 0;
+}
+nav .side-groub ul li a{
+    text-decoration: none;
+    color: #999;
+}
+nav .side-groub > a {
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #000;
+}
+nav .side-groub ul li a:hover , nav .side-groub>a:hover , nav .side-groub a.active{
+    color: #DB4444;
+}
+
+/* profile  */
+
+.profile{
+    padding: 50px;
+    min-width: 0;
+}
+.profile h2{
+    font-size: 20px;
+    font-weight: 500;
+    color: #DB4444;
+    margin-bottom: 10px;
+}
+.profile form .input {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+}
+.profile form .input label{
+    margin-top: 10px ;
+}
+.profile form .input input{
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+.profile form .input input::placeholder{
+    font-size: 16px;
+}
+.profile form .form-row{
+    display: flex;
+    justify-content: space-between;
+}
+.profile form .form-row .input{
+    width: 48%;
+}
+.profile form > .input{
+    width: 100%;
+}
+.profile form .btns{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+.profile form .btns button{
+    border: none;
+    padding: 15px 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.profile form .btns .cancel{
+    background-color: transparent;
+}
+.profile form .btns .save{
+    color: #fff;
+    background-color: #DB4444;
+    margin-left: 10px;
+}
+.profile form .btns .cancel:hover{
+    background-color: #f3f3f3;
+}
+.profile form .btns .save:hover{
+    background-color: #c03333;
+}
+
+.input span{
+    color: red;
+    position: absolute;
+    right: 10px;
+    bottom: 23px;
+    font-size: 13px;
+}
+.input span#password-error{
+    left: 10px;
+    bottom: -20px;
+}
+
+nav .fa-bars {
+    display: none;
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+@media (max-width:992px) {
+    .account .container {
+        gap: 0;
+    }
+    .account .container .profile{
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+}
+@media (max-width: 768px) {
+    .account nav .fa-bars {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .account nav .side{
+        display: none;
+    }
+    .account nav .side.open {
+        display: inline-block;
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .account .container {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+}

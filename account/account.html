@@ -5,10 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
     <link rel="stylesheet" href="account.css">
+    <!-- header , footer -->
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
+    <div id="header"></div>
+
+    <div class="top">
+        <div class="container">
+            <div class="path">
+                <a href="../index.html">Home</a>
+                <span class="separator">/</span>
+                <span>My Account</span>
+            </div>
+            <div class="welcome">
+                <p>Welcome!<span id="user-name">Md Rimel</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="account">
+        <div class="container">
+            <nav>
+                <i class="fa-solid fa-bars"></i>
+                <div class="side">
+                    <div class="side-groub">
+                        <h3>Manage My Account</h3>
+                        <ul>
+                            <li><a class="active" href="#">My Profile</a></li>
+                            <li><a href="#">Address Book</a></li>
+                            <li><a href="#">My Payment Options</a></li>
+                        </ul>
+                    </div>
+                    <div class="side-groub">
+                        <h3>My Orders</h3>
+                        <ul>
+                            <li><a href="#">My Returns</a></li>
+                            <li><a href="#">My Cancellations</a></li>
+                        </ul>
+                    </div>
+                    <div class="side-groub">
+                        <a href="#">My Wishlist</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="profile">
+                <h2>Edit Your Profile</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="input">
+                            <label for="first-name">First Name</label>
+                            <input id="first-name" type="text" placeholder="Md">
+                            <span id="first-name-error"></span>
+                        </div>
+                        <div class="input">
+                            <label for="last-name">Last Name</label>
+                            <input id="last-name" type="text" placeholder="Rimel">
+                            <span id="last-name-error"></span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input">
+                            <label for="email">Email</label>
+                            <input id="email" type="text" placeholder="rimel1111@gmail.com">
+                            <span id="email-error"></span>
+                        </div>
+                        <div class="input">
+                            <label for="address">Address</label>
+                            <input id="adress" type="text" placeholder="Kingston, 5236, United State">
+                        </div>
+                    </div>
+                    <div class="input">
+                        <label for="password">Password Changes</label>
+                        <input id="password" type="password" placeholder="Current Passwod">
+                        <input id="new-password" type="password" placeholder="New Passwod">
+                        <input id="confirm-password" type="password" placeholder="Confirm New Passwod">
+                        <span id="password-error"></span>
+                    </div>
+                    <div class="btns">
+                        <button type="reset" class="cancel">Cancel</button>
+                        <button type="submit" class="save">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
 
     <script src="account.js"></script>
+    <!-- header , footer -->
+    <script src="../header/header.js"></script>
+    <script src="../footer/footer.js"></script>
 </body>
 </html>

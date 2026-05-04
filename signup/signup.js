@@ -74,9 +74,6 @@ function validatePassword() {
     } else if (value.length < 8) {
         passwordError.textContent = "Less than 8";
         return false;
-    }else if (value.length < 8) {
-        passwordError.textContent = "Less than 8";
-        return false;
     } else {
         passwordError.textContent = "";
         return true;
@@ -90,6 +87,7 @@ password.onkeyup = validatePassword;
 signUp.onclick = function (e) {
     e.preventDefault();
     if (validateName() && validateEmail() && validatePassword()) {
+        localStorage.setItem("username", name.value);
         window.location.replace("../login/login.html");
     }
 }
