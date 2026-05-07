@@ -1,10 +1,3 @@
-// header
-fetch("../header/header.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
-
 //slider
 const slider = document.querySelector(".team-slider");
 const dots = document.querySelectorAll(".slider .dot");
@@ -33,12 +26,4 @@ function goTo(index) {
 
 dots.forEach((dot, index) => {
     dot.onclick = () => goTo(index);
-});
-
-
-//footer
-fetch("../footer/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
 });

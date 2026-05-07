@@ -1,10 +1,3 @@
-// header
-fetch("../header/header.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
-
 // body
 let email = document.getElementById("email");
 let password = document.getElementById("password");
@@ -70,10 +63,3 @@ LogIn.onclick = function (e){
         window.location.replace("../index.html");
     }
 }
-
-//footer
-fetch("../footer/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});

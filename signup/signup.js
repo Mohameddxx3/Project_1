@@ -1,10 +1,3 @@
-// header
-fetch("../header/header.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
-
 // body
 let name = document.getElementById("name");
 let email = document.getElementById("email");
@@ -92,9 +85,3 @@ signUp.onclick = function (e) {
     }
 }
 
-//footer
-fetch("../footer/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});

@@ -33,6 +33,7 @@
 .path{
     padding: 15px 0;
     font-size: 14px;
+    margin-top: 50px;
 }
 .path a{
     text-decoration: none;
@@ -47,7 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 20px;
     padding-bottom: 60px;
 }
 #story .container .story-text{

@@ -1,9 +1,3 @@
-// header
-fetch("../header/header.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("header").innerHTML = data;
-});
 
 //validation
 let firstName = document.getElementById("first-name");
@@ -123,10 +117,3 @@ saveBtn.onclick = function (e) {
 document.getElementsByClassName("fa-bars")[0].onclick = function() {
     document.getElementsByClassName("side")[0].classList.toggle("open");
 }
-
-//footer
-fetch("../footer/footer.html")
-.then(res => res.text())
-.then(data => {
-    document.getElementById("footer").innerHTML = data;
-});

@@ -30,11 +30,12 @@
 
 /* top */
 
-.top{
+.top-bar{
     padding: 15px 0;
     font-size: 14px;
+    margin-top: 50px;
 }
-.top .container{
+.top-bar .container{
     display: flex;
     justify-content: space-between;
 }
@@ -46,7 +47,7 @@
 .path .separator {
     color: #aaa;
 }
-.top .container .welcome span{
+.top-bar .container .welcome span{
     color: #DB4444;
     margin-left: 5px;
 }

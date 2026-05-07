@@ -4,16 +4,41 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-.container{
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+/* small  */
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* medium  */
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large  */
+@media (min-width:1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.head-icons {
+    display: none;
+}
+
+.login-content {
     display: flex;
     align-items: center;
     padding: 50px 0;
 }
-
-.container .image{
+.login-content .image{
     width: 55%;
 }
-.container img{
+.login-content img{
     width: 100%;
     height: 700px;
 }
@@ -94,11 +119,11 @@ form .action{
 }
 /* ===== Responsive ===== */
 @media (max-width: 922px) {
-    .container {
+    .login-content {
         flex-direction: column;
     }
 
-    .container .image {
+        .login-content .image {
         width: 100%;
     }
 
