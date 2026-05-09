@@ -242,3 +242,42 @@ prevButtonC.onclick = function(){
         categoriesSlider.style.transform = `translateX(-${slideNumC * cardWidthC()}px)`
     }
 }
+
+// month ====================================================================================
+
+let monthProducts = [];
+
+fetch("home/month.json")
+.then( res=> res.json() )
+.then( data=>{
+    monthProducts = data;
+    let monthSlide = document.getElementsByClassName("month-products")[0];
+
+    monthProducts.forEach((product)=>{
+        monthSlide.innerHTML +=`
+            <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}">
+                        <div class="icon">
+                            <div class="product-icon">
+                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                                <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Add To Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="price">
+                            <span class="now">$${product.newPrice}</span>
+                            <span class="before">${product.oldPrice > 0 ? '$' + product.oldPrice : ''}</span>
+                        </div>
+                        <div class="rate">
+                            ${renderStars(product.rating)}
+                            <span>(${product.reviews})</span>
+                        </div>
+                    </div>
+                </div>
+            `
+    });
+});
