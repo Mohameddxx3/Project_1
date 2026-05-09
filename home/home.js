@@ -105,7 +105,7 @@ fetch("https://69fd0c0f30ad0a6fd1c070fc.mockapi.io/todayProduct")
     //cart , fav
     let favoriteCount = document.getElementsByClassName("favorite-num")[0];
     let cartCount = document.getElementsByClassName("cart-num")[0];
-    
+
     document.querySelectorAll(".favorite-btn").forEach(btn => {
         btn.onclick = function() {
             favoriteCount.innerHTML++;
@@ -187,3 +187,58 @@ setInterval(function() {
     minutes.innerHTML = pad(m);
     seconds.innerHTML = pad(s);
 }, 1000);
+
+
+
+// category ====================================================================================
+
+let categories = []
+
+fetch("home/category.json")
+.then( res=> res.json() )
+.then( data=>{
+    categories = data;
+    let categoriesSlider = document.getElementsByClassName("categories-slider")[0];
+
+    categories.forEach((category)=>{
+        categoriesSlider.innerHTML += `
+        <div class="category-card">
+            <i class="fa-solid ${category.icon}"></i>
+            <p>${category.name}</p>
+        </div>
+        `
+    })
+} )
+
+let prevButtonC = document.getElementsByClassName("prev")[1];
+let nextButtonC = document.getElementsByClassName("next")[1];
+
+let slideNumC = 0;
+
+function getVisibleC() {
+    if (window.innerWidth < 576) return 2;
+    if (window.innerWidth < 992) return 4;
+    return 6;
+}
+
+const cardWidthC = () => {
+    const card = document.querySelector(".category-card");
+    return card ? card.offsetWidth + 20 : 0;
+};
+
+nextButtonC.onclick = function(){
+    let categoriesSlider = document.getElementsByClassName("categories-slider")[0];
+    
+    if (slideNumC < categories.length - getVisibleC()) {
+        slideNumC++;
+        categoriesSlider.style.transform = `translateX(-${slideNumC * cardWidthC()}px)`
+    }
+}
+prevButtonC.onclick = function(){
+    let categoriesSlider = document.getElementsByClassName("categories-slider")[0];
+    
+    if (slideNumC > 0) {
+        slideNumC--;
+        categoriesSlider.style.transform = `translateX(-${slideNumC * cardWidthC()}px)`
+    }
+}
