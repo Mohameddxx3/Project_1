@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "name": "Breed Dry Dog Food",
+        "price": 100,
+        "rating": 3,
+        "reviews": 35,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400"
+    },
+    {
+        "id": 2,
+        "name": "CANON EOS DSLR Camera",
+        "price": 360,
+        "rating": 4,
+        "reviews": 95,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400"
+    },
+    {
+        "id": 3,
+        "name": "ASUS FHD Gaming Laptop",
+        "price": 700,
+        "rating": 5,
+        "reviews": 325,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400"
+    },
+    {
+        "id": 4,
+        "name": "Curology Product Set",
+        "price": 500,
+        "rating": 4,
+        "reviews": 145,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400"
+    },
+    {
+        "id": 5,
+        "name": "Kids Electric Car",
+        "price": 960,
+        "rating": 5,
+        "reviews": 65,
+        "isNew": true,
+        "colors": ["#DB4444", "#FF0000"],
+        "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400"
+    },
+    {
+        "id": 6,
+        "name": "Jr. Zoom Soccer Cleats",
+        "price": 1160,
+        "rating": 4,
+        "reviews": 35,
+        "isNew": false,
+        "colors": ["#FFFF00", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+    },
+    {
+        "id": 7,
+        "name": "GP11 Shooter USB Gamepad",
+        "price": 660,
+        "rating": 4,
+        "reviews": 55,
+        "isNew": true,
+        "colors": ["#000000", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1593118247619-e2d6f056869e?w=400"
+    },
+    {
+        "id": 8,
+        "name": "Quilted Satin Jacket",
+        "price": 660,
+        "rating": 4,
+        "reviews": 55,
+        "isNew": false,
+        "colors": ["#1B4332", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400"
+    },
+    {
+        "id": 9,
+        "name": "IPS LCD Gaming Monitor",
+        "price": 370,
+        "rating": 5,
+        "reviews": 99,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400"
+    },
+    {
+        "id": 10,
+        "name": "RGB Liquid CPU Cooler",
+        "price": 160,
+        "rating": 4,
+        "reviews": 65,
+        "isNew": true,
+        "colors": ["#000000", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=400"
+    },
+    {
+        "id": 11,
+        "name": "HAVIT HV-G92 Gamepad",
+        "price": 120,
+        "rating": 5,
+        "reviews": 88,
+        "isNew": false,
+        "colors": ["#DB4444", "#000000"],
+        "image": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?w=400"
+    },
+    {
+        "id": 12,
+        "name": "AK-900 Wired Keyboard",
+        "price": 960,
+        "rating": 4,
+        "reviews": 75,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400"
+    },
+    {
+        "id": 13,
+        "name": "The North Coat",
+        "price": 260,
+        "rating": 5,
+        "reviews": 65,
+        "isNew": true,
+        "colors": ["#DB4444", "#1B4332"],
+        "image": "https://images.unsplash.com/photo-1544923246-77307dd654cb?w=400"
+    },
+    {
+        "id": 14,
+        "name": "Gucci Duffle Bag",
+        "price": 960,
+        "rating": 4,
+        "reviews": 55,
+        "isNew": false,
+        "colors": ["#8B6914", "#000000"],
+        "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400"
+    },
+    {
+        "id": 15,
+        "name": "Small BookShelf",
+        "price": 360,
+        "rating": 5,
+        "reviews": 85,
+        "isNew": false,
+        "colors": [],
+        "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400"
+    },
+    {
+        "id": 16,
+        "name": "Sony Wireless Headphones",
+        "price": 280,
+        "rating": 5,
+        "reviews": 120,
+        "isNew": true,
+        "colors": ["#000000", "#FFFFFF"],
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400"
+    },
+    {
+        "id": 17,
+        "name": "Samsung 4K Smart TV",
+        "price": 1200,
+        "rating": 5,
+        "reviews": 200,
+        "isNew": false,
+        "colors": ["#000000"],
+        "image": "https://tse1.mm.bing.net/th/id/OIP.IeUYi9yoilYCpuiz6PLkKgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+        "id": 18,
+        "name": "Nike Running Shoes",
+        "price": 180,
+        "rating": 4,
+        "reviews": 310,
+        "isNew": true,
+        "colors": ["#FFFFFF", "#DB4444", "#000000"],
+        "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
+    },
+    {
+        "id": 19,
+        "name": "Apple Watch Series 8",
+        "price": 450,
+        "rating": 5,
+        "reviews": 430,
+        "isNew": false,
+        "colors": ["#C0C0C0", "#000000"],
+        "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400"
+    },
+    {
+        "id": 20,
+        "name": "Portable Bluetooth Speaker",
+        "price": 95,
+        "rating": 4,
+        "reviews": 78,
+        "isNew": false,
+        "colors": ["#000000", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400"
+    },
+    {
+        "id": 21,
+        "name": "iPad Pro 12.9",
+        "price": 1100,
+        "rating": 5,
+        "reviews": 520,
+        "isNew": true,
+        "colors": ["#C0C0C0", "#808080"],
+        "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400"
+    },
+    {
+        "id": 22,
+        "name": "Coffee Machine",
+        "price": 220,
+        "rating": 4,
+        "reviews": 89,
+        "isNew": false,
+        "colors": ["#000000", "#C0C0C0"],
+        "image": "https://images.unsplash.com/photo-1520970014086-2208d157c9e2?w=400"
+    },
+    {
+        "id": 23,
+        "name": "Electric Scooter",
+        "price": 750,
+        "rating": 4,
+        "reviews": 44,
+        "isNew": true,
+        "colors": ["#000000", "#FFFFFF"],
+        "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400"
+    },
+    {
+        "id": 24,
+        "name": "Mechanical Gaming Mouse",
+        "price": 85,
+        "rating": 4,
+        "reviews": 156,
+        "isNew": false,
+        "colors": ["#000000", "#DB4444"],
+        "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400"
+    }
+]

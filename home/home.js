@@ -194,7 +194,7 @@ setInterval(function() {
 
 let categories = []
 
-fetch("home/category.json")
+fetch("home/json/category.json")
 .then( res=> res.json() )
 .then( data=>{
     categories = data;
@@ -247,7 +247,7 @@ prevButtonC.onclick = function(){
 
 let monthProducts = [];
 
-fetch("home/month.json")
+fetch("home/json/month.json")
 .then( res=> res.json() )
 .then( data=>{
     monthProducts = data;
@@ -315,3 +315,84 @@ setInterval(function () {
     bMinutes.innerHTML = pad(m);
     bSeconds.innerHTML = pad(s);
 }, 1000);
+
+
+// products ====================================================================================
+let exploreProducts = [];
+let exploreSlideNum = 0;
+const perPage = 8;
+
+fetch("home/json/products.json")
+.then( res=>res.json() )
+.then( data=>{
+    exploreProducts = data ;
+    const productsSlider = document.querySelector("#products .products-slider");
+
+    for (let i = 0; i < exploreProducts.length; i += perPage) {
+        const page = exploreProducts.slice(i, i + perPage);
+        
+        let slidePage = document.createElement("div");
+        slidePage.classList.add("slide-page");
+
+        page.forEach(product => {
+            slidePage.innerHTML += `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="icon">
+                            ${product.isNew ? '<span class="new-badge">NEW</span>' : ''}
+                            <div class="product-icon">
+                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                                <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Add To Cart</button>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="details">
+                            <div class="price">
+                                <span class="now">$${product.price}</span>
+                            </div>
+                            <div class="rate">
+                                ${renderStars(product.rating)}
+                                <span>(${product.reviews})</span>
+                            </div>
+                        </div>
+                        ${product.colors.length > 0 ? `
+                            <div class="colors">
+                                ${product.colors.map(c => `<span class="color" style="background:${c}"></span>`).join('')}
+                            </div>` : ''}
+                    </div>
+                </div>
+            `;
+        });
+
+        productsSlider.appendChild(slidePage);
+    }
+
+    document.querySelectorAll(".color").forEach(color => {
+    color.onclick = function() {
+        this.closest(".colors").querySelectorAll(".color").forEach(c => c.classList.remove("active"));
+        this.classList.add("active");
+    }
+});
+
+    const nextBtn = document.querySelectorAll(".arrow-btn.next")[2];
+    const prevBtn = document.querySelectorAll(".arrow-btn.prev")[2];
+    const totalPages = Math.ceil(exploreProducts.length / perPage);
+
+    nextBtn.onclick = function () {
+        if (exploreSlideNum < totalPages - 1) {
+            exploreSlideNum++;
+            productsSlider.style.transform = `translateX(-${exploreSlideNum * 100}%)`;
+        }
+    };
+
+    prevBtn.onclick = function () {
+        if (exploreSlideNum > 0) {
+            exploreSlideNum--;
+            productsSlider.style.transform = `translateX(-${exploreSlideNum * 100}%)`;
+        }
+    };
+});
