@@ -365,19 +365,19 @@
 }
 
 /* button  */
-#today .container .view-all{
+.container .view-all{
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
-.view-all a{
+.btn-view-all{
     color: #fff;
     background-color: var(--main-color);
     text-decoration: none;
     padding: 15px 45px;
     border-radius: 4px;
 }
-.view-all a:hover {
+.btn-view-all:hover {
     background-color: #c03333;
 }
 
@@ -453,7 +453,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
 }
-#month .container .section-head .view-all{
+#month .container .section-head .view-All{
     display: flex;
     margin-left: auto;
 }
@@ -463,9 +463,6 @@
     margin-top: 40px;
     overflow: hidden;
 }
-/* #month .container .month-products .discount{
-    display: none;
-} */
 @media (max-width: 992px) {
     #month .month-products {
         flex-wrap: wrap;
@@ -479,6 +476,98 @@
     #month .product-card {
         width: 100%;
         min-width: unset;
+    }
+}
+
+/* banner ========================================================== */
+
+#banner .container{
+    background-color: #000;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 90%);
+    overflow: hidden;
+    color: #fff;
+    padding: 60px ;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+#banner .container .banner-text{
+    max-width: 45%;
+}
+#banner .container .banner-text .banner-tag{
+    color: #00FF66;
+    font-weight: 600;
+}
+#banner .container .banner-text h2{
+    font-size: 48px;
+    font-weight: 600;
+    margin: 20px 0;
+    line-height: 1.2;
+}
+#banner .container .banner-text .time{
+    margin-bottom: 50px;
+    display: flex;
+    gap: 15px;
+}
+#banner .container .banner-text .time .time-block{
+    width: 65px;
+    height: 65px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#banner .container .banner-text .time .time-block .value{
+    font-weight: 600;
+}
+#banner .container .banner-text .time .time-block .label{
+    font-size: 11px;
+}
+#banner .container .banner-text .btn-buy{
+    color: #fff;
+    text-decoration: none;
+    background-color: #00FF66;
+    padding: 15px 50px;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+}
+#banner .container .banner-text .btn-buy:hover {
+    opacity: 0.9;
+}
+#banner .container .banner-image{
+    max-width: 50%;
+}
+#banner .container .banner-image img{
+    filter: drop-shadow(-20px 0px 150px rgba(255, 255, 255, 0.5));
+    width: 100%;
+}
+@media (max-width: 768px) {
+    #banner .container {
+        flex-direction: column;
+        padding: 40px 0px;
+        text-align: center;
+    }
+
+    #banner .banner-text {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #banner .container .banner-image {
+        max-width: 90%;
+        margin-top: 30px;
+    }
+
+    #banner .banner-text h2 {
+        font-size: 32px;
     }
 }
 

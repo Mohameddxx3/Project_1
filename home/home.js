@@ -281,3 +281,37 @@ fetch("home/month.json")
             `
     });
 });
+
+// banner ====================================================================================
+
+// let bannerEndTime = localStorage.getItem("bannerCountdownEnd");
+
+// if (!bannerEndTime) {
+//     bannerEndTime = Date.now() + 1 * 24 * 60 * 60 * 1000;
+//     localStorage.setItem("bannerCountdownEnd", bannerEndTime);
+// }
+
+const bHours = document.getElementById("hoursb");
+const bDays = document.getElementById("daysb");
+const bMinutes = document.getElementById("minutesb");
+const bSeconds = document.getElementById("secondsb");
+
+let totalSecondsb = 4 * 24 * 60 * 60;
+
+setInterval(function () {
+    // let totalSeconds = Math.floor((bannerEndTime - Date.now()) / 1000);
+
+    if (totalSecondsb <= 0) return;
+
+    totalSecondsb--;
+
+    let d = Math.floor(totalSecondsb / (24 * 60 * 60));
+    let h = Math.floor((totalSecondsb % (24 * 60 * 60)) / (60 * 60));
+    let m = Math.floor((totalSecondsb % (60 * 60)) / 60);
+    let s = totalSecondsb % 60;
+
+    bDays.innerHTML = pad(d);
+    bHours.innerHTML = pad(h);
+    bMinutes.innerHTML = pad(m);
+    bSeconds.innerHTML = pad(s);
+}, 1000);
