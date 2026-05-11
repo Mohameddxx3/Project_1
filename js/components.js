@@ -1,4 +1,4 @@
-const isRoot = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+const isRoot = window.location.pathname.endsWith("/Project_1/") || window.location.pathname.endsWith("/Project_1/index.html");
 const base = isRoot ? "" : "../";
 
 // header
