@@ -1,5 +1,8 @@
+const isRoot = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+const base = isRoot ? "" : "../";
+
 // header
-fetch("../header/header.html")
+fetch(`${base}header/header.html`)
 .then(res => res.text())
 .then(data => {
     document.getElementById("header").innerHTML = data;
@@ -53,7 +56,7 @@ fetch("../header/header.html")
 
 
 //footer
-fetch("../footer/footer.html")
+fetch(`${base}footer/footer.html`)
 .then(res => res.text())
 .then(data => {
     document.getElementById("footer").innerHTML = data;
