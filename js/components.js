@@ -7,6 +7,12 @@ fetch(`${base}header/header.html`)
 .then(data => {
     document.getElementById("header").innerHTML = data;
 
+    if (isRoot) {
+        document.querySelectorAll("a[href='../index.html']").forEach(a => {
+            a.href = "index.html";
+        });
+    }
+
     // خط تحت اسم الصفحه
     const currentPage = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("ul li a");
