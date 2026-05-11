@@ -5,10 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
     <link rel="stylesheet" href="details.css">
+    <!-- home  عشان Related Item -->
+    <link rel="stylesheet" href="../home/home.css">
+    <!-- header , footer -->
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <!-- Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 </head>
 <body>
+    <div id="header"></div>
     
+    <div class="path">
+        <div class="container">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="#">Gaming</a>
+            <span class="separator">/</span>
+            <span id="product-name-path" >Havic HV G-92 Gamepad</span>
+        </div>
+    </div>
+
+    <section id="product">
+        <div class="container">
+            <div class="product-images">
+                <div class="side">
+                    <img src="../login/login.png" alt="photo1" class="photo">
+                    <img src="../login/login.png" alt="photo2" class="photo">
+                    <img src="../login/login.png" alt="photo3" class="photo">
+                    <img src="../login/login.png" alt="photo4" class="photo">
+                </div>
+                <div class="main-image">
+                    <img src="../login/login.png" alt="main photo" id="main-img">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1 id="product-title">Havic HV G-92 Gamepad</h1>
+                <div class="product-meta">
+                    <div class="rate">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(5 rev)</span>
+                    </div>
+                    <span class="divider">|</span>
+                    <span class="in-stock">In Stock</span>
+                </div>
+                <h2 class="product-price" id="product-price">$192.00</h2>
+                <p class="product-desc" id="product-desc">High quality product with premium materials, designed for comfort and durability. Perfect for everyday use.</p>
+
+                <hr>
+
+                <div class="color">
+                    <span>Colours:</span>
+                    <div class="colors" id="product-colors">
+                        <span class="active"></span>
+                    </div>
+                </div>
+                <div class="size">
+                    <span>Size:</span>
+                    <div class="sizes">
+                        <button class="size-btn">XS</button>
+                        <button class="size-btn">S</button>
+                        <button class="size-btn active">M</button>
+                        <button class="size-btn">L</button>
+                        <button class="size-btn">XL</button>
+                    </div>
+                </div>
+                <div class="product-actions">
+                    <div class="count">
+                        <button id="qty-minus"><i class="fas fa-minus"></i></button>
+                        <span id="qty-value">2</span>
+                        <button id="qty-plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button class="buy-btn">Buy now</button>
+                    <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="delivery">
+                    <div class="delivery-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <div>
+                            <h4>Free Delivery</h4>
+                            <a href="#">Enter your postal code for Delivery Availability</a>
+                        </div>
+                    </div>
+                    <div class="delivery-item">
+                        <i class="fas fa-rotate-left"></i>
+                        <div>
+                            <h4>Return Delivery</h4>
+                            <p>Free 30 Days Delivery Returns. <a href="#">Details</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="related">
+        <div class="container">
+            <div class="section-head">
+                <div class="section-tag">
+                    <span class="tag-bar"></span>
+                    <span class="tag-text">Related Item</span>
+                </div>
+            </div>
+            <div class="products-wrapper">
+                <div class="products-slider" id="related-slider"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
 
     <script src="details.js"></script>
-</body>
+    <!-- header , footer -->
+    <script src="../js/components.js"></script>
 </html>

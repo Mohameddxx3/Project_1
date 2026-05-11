@@ -4,7 +4,7 @@ fetch("../header/header.html")
 .then(data => {
     document.getElementById("header").innerHTML = data;
 
-    // خط تحت اسم الصفحه    
+    // خط تحت اسم الصفحه
     const currentPage = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("ul li a");
     navLinks.forEach(link => {
@@ -28,7 +28,7 @@ fetch("../header/header.html")
         document.getElementsByClassName("head-icons")[0].style.display = "none";
     }
 
-    // logOut 
+    // logOut
     let logout = document.getElementById("logout-btn");
     logout.onclick = function(e){
         e.preventDefault();
@@ -46,6 +46,9 @@ fetch("../header/header.html")
             mobileMenu.classList.toggle("open");
         };
     }
+
+    document.getElementsByClassName("favorite-num")[0].innerHTML = sessionStorage.getItem("favoriteCount") || 0;
+    document.getElementsByClassName("cart-num")[0].innerHTML = sessionStorage.getItem("cartCount") || 0;
 });
 
 

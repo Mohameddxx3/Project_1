@@ -73,47 +73,84 @@ fetch("https://69fd0c0f30ad0a6fd1c070fc.mockapi.io/todayProduct")
     products = data ;
     let productsSlider = document.getElementsByClassName("products-slider")[0];
 
+    
     products.forEach((product) => {
-        productsSlider.innerHTML += `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${product.image}">
-                    <div class="icon">
-                        <span class="discount">-${product.discount}%</span>
-                        <div class="product-icon">
-                            <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                            <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
-                        </div>
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML += `
+            <div class="product-image">
+                <img src="${product.image}">
+                <div class="icon">
+                    <span class="discount">-${product.discount}%</span>
+                    <div class="product-icon">
+                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                        <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
                     </div>
-                    <button class="add-to-cart">Add To Cart</button>
                 </div>
-                <div class="product-info">
-                    <h3>${product.name}</h3>
-                    <div class="price">
-                        <span class="now">$${product.newPrice}</span>
-                        <span class="before">$${product.oldPrice}</span>
-                    </div>
-                    <div class="rate">
-                        ${renderStars(product.rating)}
-                        <span>(${product.reviews})</span>
-                    </div>
+                <button class="add-to-cart">Add To Cart</button>
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="price">
+                    <span class="now">$${product.newPrice}</span>
+                    <span class="before">$${product.oldPrice}</span>
+                </div>
+                <div class="rate">
+                    ${renderStars(product.rating)}
+                    <span>(${product.reviews})</span>
                 </div>
             </div>
-            `;
+        `;
+
+        // view
+        card.querySelector(".view-btn").onclick = function() {
+            sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+            window.location.href = "details/details.html";
+        }
+
+        productsSlider.appendChild(card);
+    
     });
 
     //cart , fav
-    let favoriteCount = document.getElementsByClassName("favorite-num")[0];
-    let cartCount = document.getElementsByClassName("cart-num")[0];
-
+    
     document.querySelectorAll(".favorite-btn").forEach(btn => {
         btn.onclick = function() {
-            favoriteCount.innerHTML++;
+            let favoriteCount = document.getElementsByClassName("favorite-num")[0];
+            if(window.localStorage.getItem("isLoggedIn")){
+                const icon = this.querySelector("i");
+                
+                let favCount = parseInt(sessionStorage.getItem("favoriteCount")) || 0;
+                if (icon.classList.contains("fa-regular")) {
+                    favCount++;
+                } else {
+                    favCount--;
+                }
+
+                sessionStorage.setItem("favoriteCount", favCount);
+                favoriteCount.innerHTML = favCount;
+                    
+                icon.classList.toggle("fa-regular");
+                icon.classList.toggle("fa-solid");
+                
+            }else{
+                window.location.href = "login/login.html";
+            }
         }
     });
     document.querySelectorAll(".add-to-cart").forEach(btn => {
         btn.onclick = function() {
-            cartCount.innerHTML++;
+            let cartCount = document.getElementsByClassName("cart-num")[0];
+            if(window.localStorage.getItem("isLoggedIn")){
+                let crtCount = parseInt(sessionStorage.getItem("cartCount")) || 0;
+                crtCount++;
+
+                sessionStorage.setItem("cartCount", crtCount);
+                cartCount.innerHTML = crtCount;
+            }else{
+                window.location.href = "login/login.html";
+            }
         }
     });
 });
@@ -254,31 +291,40 @@ fetch("home/json/month.json")
     let monthSlide = document.getElementsByClassName("month-products")[0];
 
     monthProducts.forEach((product)=>{
-        monthSlide.innerHTML +=`
-            <div class="product-card">
-                    <div class="product-image">
-                        <img src="${product.image}">
-                        <div class="icon">
-                            <div class="product-icon">
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                                <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
-                            </div>
-                        </div>
-                        <button class="add-to-cart">Add To Cart</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <div class="price">
-                            <span class="now">$${product.newPrice}</span>
-                            <span class="before">${product.oldPrice > 0 ? '$' + product.oldPrice : ''}</span>
-                        </div>
-                        <div class="rate">
-                            ${renderStars(product.rating)}
-                            <span>(${product.reviews})</span>
-                        </div>
+        const card = document.createElement("div");
+        card.classList.add("product-card");
+
+        card.innerHTML +=`
+            <div class="product-image">
+                <img src="${product.image}">
+                <div class="icon">
+                    <div class="product-icon">
+                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                        <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
                     </div>
                 </div>
-            `
+                <button class="add-to-cart">Add To Cart</button>
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="price">
+                    <span class="now">$${product.newPrice}</span>
+                    <span class="before">${product.oldPrice > 0 ? '$' + product.oldPrice : ''}</span>
+                </div>
+                <div class="rate">
+                    ${renderStars(product.rating)}
+                    <span>(${product.reviews})</span>
+                </div>
+            </div>
+        `
+
+        // view
+        card.querySelector(".view-btn").onclick = function() {
+            sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+            window.location.href = "details/details.html";
+        }
+        
+        monthSlide.appendChild(card);
     });
 });
 
@@ -335,37 +381,47 @@ fetch("home/json/products.json")
         slidePage.classList.add("slide-page");
 
         page.forEach(product => {
-            slidePage.innerHTML += `
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.name}">
-                        <div class="icon">
-                            ${product.isNew ? '<span class="new-badge">NEW</span>' : ''}
-                            <div class="product-icon">
-                                <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
-                                <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
-                            </div>
-                        </div>
-                        <button class="add-to-cart">Add To Cart</button>
-                    </div>
-                    <div class="product-info">
-                        <h3>${product.name}</h3>
-                        <div class="details">
-                            <div class="price">
-                                <span class="now">$${product.price}</span>
-                            </div>
-                            <div class="rate">
-                                ${renderStars(product.rating)}
-                                <span>(${product.reviews})</span>
-                            </div>
-                        </div>
-                        ${product.colors.length > 0 ? `
-                            <div class="colors">
-                                ${product.colors.map(c => `<span class="color" style="background:${c}"></span>`).join('')}
-                            </div>` : ''}
+            const card = document.createElement("div");
+            card.classList.add("product-card");
+
+            card.innerHTML += `
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}">
+                <div class="icon">
+                    ${product.isNew ? '<span class="new-badge">NEW</span>' : ''}
+                    <div class="product-icon">
+                        <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                        <button class="view-btn"><i class="fa-regular fa-eye"></i></button>
                     </div>
                 </div>
+                <button class="add-to-cart">Add To Cart</button>
+            </div>
+            <div class="product-info">
+                <h3>${product.name}</h3>
+                <div class="details">
+                    <div class="price">
+                        <span class="now">$${product.price}</span>
+                    </div>
+                    <div class="rate">
+                        ${renderStars(product.rating)}
+                        <span>(${product.reviews})</span>
+                    </div>
+                </div>
+                ${product.colors.length > 0 ? `
+                    <div class="colors">
+                        ${product.colors.map(c => `<span class="color" style="background:${c}"></span>`).join('')}
+                    </div>` : ''}
+            </div>
             `;
+
+            // view
+            card.querySelector(".view-btn").onclick = function() {
+                sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+                window.location.href = "details/details.html";
+            }
+
+            slidePage.appendChild(card);
+
         });
 
         productsSlider.appendChild(slidePage);

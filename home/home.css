@@ -315,6 +315,9 @@
     background: #DB4444;
     color: #fff;
 }
+.product-card .product-image .icon .product-icon .fa-solid{
+    color: red;
+}
 .product-card .product-image .add-to-cart{
     position: absolute;
     bottom: -40px;
@@ -382,7 +385,7 @@
 }
 
 @media (max-width: 992px) {
-    #today .product-card {
+    .product-card {
         min-width: calc((100% - 40px) / 2);
     }
 }
@@ -392,7 +395,7 @@
         gap: 20px;
     }
 
-    #today .product-card {
+    .product-card {
         min-width: 100%;
     }
 }
