@@ -40,7 +40,8 @@
 }
 .login-content img{
     width: 100%;
-    height: 700px;
+    /* height: 700px; */
+    object-fit: contain;
 }
 .login {
     padding-left: 80px;
@@ -122,8 +123,8 @@ form .action{
         flex-direction: column;
     }
 
-        .login-content .image {
-        width: 100%;
+    .login-content .image {
+    width: 100%;
     }
 
     .login {
