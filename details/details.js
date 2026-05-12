@@ -147,7 +147,7 @@ fetch("https://69fd0c0f30ad0a6fd1c070fc.mockapi.io/todayProduct")
                 icon.classList.toggle("fa-solid");
                 
             }else{
-                window.location.href = "../login/login.html";
+                window.location.href = "../login/login.html"; 
             }
         }
     });
