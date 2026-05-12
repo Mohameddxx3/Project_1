@@ -43,7 +43,7 @@ fetch(`${base}header/header.html`)
         e.preventDefault();
         window.localStorage.removeItem("isLoggedIn");
         window.localStorage.removeItem("username");
-        window.location.replace("../login/login.html");
+        window.location.replace(`${base}login/login.html`);
     }
 
     // منيو الفون
